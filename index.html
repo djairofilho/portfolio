@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djairo Dantas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="text-center fade-in">
+                <div class="mb-6">
+                    <div class="w-40 h-40 md:w-48 md:h-48 bg-white rounded-full mx-auto overflow-hidden shadow-lg">
+                        <img src="djairo.jpg" alt="Djairo Dantas" class="w-full h-full object-cover object-center" loading="eager" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; image-rendering: optimize-quality; filter: contrast(1.05) brightness(1.02);">
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Djairo Dantas</h1>
+                <p class="text-xl md:text-2xl font-light opacity-90">Desenvolvedor Full Stack</p>
+                <div class="mt-6">
+                    <span class="inline-block bg-white bg-opacity-20 rounded-full px-4 py-2 text-sm font-medium">
+                        <i class="fas fa-code mr-2"></i>
+                        Disponível para projetos
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- About Section -->
+            <section class="text-center mb-16 fade-in" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Sobre Mim</h2>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                    Desenvolvedor apaixonado por tecnologia e inovação. Sempre buscando aprender novas 
+                    tecnologias e criar soluções que fazem a diferença. Explore meus projetos e entre em contato!
+                </p>
+            </section>
+
+            <!-- Social Links -->
+            <section class="fade-in" style="animation-delay: 0.4s;">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Conecte-se Comigo</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <!-- GitHub Card -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 card-hover cursor-pointer" onclick="openGitHub()">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gray-900 rounded-full mx-auto flex items-center justify-center text-white text-2xl mb-4">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">GitHub</h3>
+                            <p class="text-gray-600 mb-4">Veja meus projetos e contribuições no GitHub</p>
+                            <button class="bg-gray-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+                                Visitar GitHub
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 card-hover cursor-pointer" onclick="openLinkedIn()">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full mx-auto flex items-center justify-center text-white text-2xl mb-4">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">LinkedIn</h3>
+                            <p class="text-gray-600 mb-4">Conecte-se comigo profissionalmente</p>
+                            <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                Visitar LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </main>
+
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">
+                © 2025 Djairo Dantas
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function openGitHub() {
+            window.open('https://github.com/djairofilho', '_blank');
+        }
+
+        function openLinkedIn() {
+            window.open('https://www.linkedin.com/in/djairo-dantas-bb228022b/', '_blank');
+        }
+
+
+        window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+
+
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
