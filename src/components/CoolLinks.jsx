@@ -2,19 +2,13 @@ import React from 'react';
 
 const links = [
   {
-    title: 'Jogo da Tabela Periódica',
+    title: 'Batalha Naval da Química',
     url: 'https://periodic-table-game.djairodantas.com/',
     description: 'Treine seus conhecimentos de química de forma divertida.',
     accent: '#10b981',
     icon: 'fa-flask',
   },
-  {
-    title: 'Handshake',
-    url: 'https://handshake.djairodantas.com/',
-    description: 'A quantos apertos de mão você está de alguém famoso?',
-    accent: '#a855f7',
-    icon: 'fa-handshake',
-  },
+
   {
     title: 'Gerador de QR Code',
     url: 'https://gerador-qr-code.djairodantas.com/',
@@ -23,25 +17,33 @@ const links = [
     icon: 'fa-qrcode',
   },
   {
-    title: 'n8n',
-    url: 'https://eneoitoene.djairodantas.com',
-    description: 'Experimento e automações com n8n open source de forma descomplicada.',
-    accent: '#f97316',
-    icon: 'fa-diagram-project',
-  },
-  {
-    title: 'ChatRM',
-    url: 'https://chatrm.djairodantas.com/',
-    description: 'Um CRM baseado no chatwoot open source.',
-    accent: '#3b82f6',
-    icon: 'fa-comments',
-  },
-  {
     title: 'Fox Cassino',
     url: 'https://insper-classroom.github.io/projeto-pygame-site-time-turquesa-djairo-lucas-haro/',
     description: 'Jogo em Pygame com captura de gestos via mediapipe e opencv.',
     accent: '#ef4444',
     icon: 'fa-gamepad',
+  },
+  {
+    title: 'Dark Stories',
+    url: 'https://darkstories.darkautomation.com.br/',
+    description: 'Jogue com os amigos numa resenha de histórias sombrias.',
+    accent: '#7c3aed',
+    icon: 'fa-moon',
+  },
+  {
+    title: 'Alyvera Agenda',
+    url: 'https://agenda.alyvera.pro/',
+    description: 'SaaS de agendamentos para salões e prestadores de serviço.',
+    accent: '#0ea5e9',
+    icon: 'fa-calendar-check',
+  },
+  {
+    title: 'MedAgenda POC',
+    url: 'https://github.com/djairofilho/medagenda-poc-agent',
+    description: 'Agente de IA para agendamentos médicos — versão completa em desenvolvimento.',
+    accent: '#14b8a6',
+    iconBrand: true,
+    icon: 'fa-brands fa-github',
   },
 ];
 
@@ -65,7 +67,7 @@ const CoolLinks = () => (
                   className="w-14 h-14 rounded-xl flex items-center justify-center text-white text-2xl"
                   style={{ background: item.accent, boxShadow: `0 0 20px ${item.accent}55` }}
                 >
-                  <i className={`fa-solid ${item.icon}`} />
+                  <i className={item.iconBrand ? item.icon : `fa-solid ${item.icon}`} />
                 </div>
                 <h3 className="text-lg font-semibold" style={{ color: '#f1f5f9' }}>
                   {item.title}
