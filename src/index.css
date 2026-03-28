@@ -37,53 +37,101 @@ body {
   50%       { opacity: 0; }
 }
 
-/* ─── Flip Cards ─── */
-.flip-card {
-  perspective: 1000px;
-  height: 160px;
+/* ─── Bento Grid ─── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
-.flip-card-inner {
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-card {
+    grid-column: span 1 !important;
+  }
+}
+
+.bento-card {
   position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  min-height: 160px;
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 25%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
-.flip-card-front,
-.flip-card-back {
+.bento-accent-line {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 0.75rem;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 1rem 1rem 0 0;
+  opacity: 0.8;
+}
+
+.bento-tag {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.bento-icon {
+  font-size: 1.6rem;
+}
+
+.bento-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.bento-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.bento-cta {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  box-sizing: border-box;
+  gap: 0.35rem;
 }
 
-.flip-card-front {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(99, 179, 237, 0.15);
+.bento-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
 }
 
-.flip-card-back {
-  background: rgba(30, 27, 75, 0.95);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(99, 179, 237, 0.3);
-  transform: rotateY(180deg);
-  flex-direction: column;
-  gap: 0.75rem;
-  text-align: center;
+.bento-card:hover .bento-arrow {
+  transform: translateX(4px);
 }
 
 /* ─── Old card hover (kept for SocialLinks) ─── */
