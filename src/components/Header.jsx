@@ -56,14 +56,16 @@ const Header = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center fade-in">
           <div className="mb-6">
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto overflow-hidden shadow-2xl"
-              style={{ border: '3px solid rgba(99, 179, 237, 0.4)' }}>
+            <div className="w-56 h-56 md:w-64 md:h-64 rounded-full mx-auto overflow-hidden"
+              style={{
+                boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.5), 0 0 30px rgba(99, 179, 237, 0.25)',
+              }}>
               <img
-                src="/djairo.jpg"
-                alt="Djairo Dantas"
-                className="w-full h-full object-cover object-center"
+                src="/djairo1.jpeg"
+                alt="Djairo Dantas no evento Google"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '60% 15%' }}
                 loading="eager"
-                style={{ filter: 'contrast(1.05) brightness(1.02)' }}
               />
             </div>
           </div>

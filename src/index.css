@@ -10,7 +10,7 @@ body {
 
 /* ─── Header gradient ─── */
 .gradient-bg {
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
